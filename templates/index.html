@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Bearing Predictive Maintenance</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#model-performance">Model Performance</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#data-analysis">Data Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Bearing Health Monitoring</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-header">Current Health Status</div>
+                                    <div class="card-body text-center">
+                                        <div class="gauge-container">
+                                            <canvas id="healthGauge"></canvas>
+                                        </div>
+                                        <div class="mt-3">
+                                            <h3 id="healthValue">--</h3>
+                                            <p>Health Index (%)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-header">Remaining Useful Life</div>
+                                    <div class="card-body text-center">
+                                        <div class="gauge-container">
+                                            <canvas id="rulGauge"></canvas>
+                                        </div>
+                                        <div class="mt-3">
+                                            <h3 id="rulValue">--</h3>
+                                            <p>RUL Prediction</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-header">System Status</div>
+                                    <div class="card-body">
+                                        <div class="alert" id="statusAlert">
+                                            System status will appear here
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-primary" id="predictBtn">Run Prediction</button>
+                                            <button class="btn btn-secondary" id="refreshBtn">Refresh Data</button>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p>Last updated: <span id="lastUpdated">--</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Vibration Monitoring</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <canvas id="vibrationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4" id="model-performance">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Model Performance</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">Training History</div>
+                                    <div class="card-body">
+                                        <img id="trainingHistoryImg" class="img-fluid" src="" alt="Training History">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">Actual vs Predicted</div>
+                                    <div class="card-body">
+                                        <img id="actualVsPredictedImg" class="img-fluid" src="" alt="Actual vs Predicted">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">Model Comparison</div>
+                                    <div class="card-body">
+                                        <img id="modelComparisonImg" class="img-fluid" src="" alt="Model Comparison">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">Feature Importance</div>
+                                    <div class="card-body">
+                                        <img id="featureImportanceImg" class="img-fluid" src="" alt="Feature Importance">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4" id="data-analysis">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Data Analysis</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">RUL Distribution</div>
+                                    <div class="card-body">
+                                        <img id="rulDistributionImg" class="img-fluid" src="" alt="RUL Distribution">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">Health Index Trend</div>
+                                    <div class="card-body">
+                                        <img id="healthIndexImg" class="img-fluid" src="" alt="Health Index Trend">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-4" id="about">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>About This System</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Predictive Maintenance System for Bearing Fault Detection</h5>
+                        <p>This system uses deep learning models (CNN-LSTM) to predict the Remaining Useful Life (RUL) of bearings based on vibration data from the Case Western Bearing Dataset.</p>
+                        
+                        <h5>Key Features:</h5>
+                        <ul>
+                            <li>Real-time monitoring of bearing health status</li>
+                            <li>Prediction of Remaining Useful Life (RUL)</li>
+                            <li>Visualization of vibration patterns and trends</li>
+                            <li>Comparison of different predictive models</li>
+                            <li>Analysis of feature importance for fault detection</li>
+                        </ul>
+                        
+                        <h5>How It Works:</h5>
+                        <p>The system processes vibration data from accelerometers mounted on bearings. This data is fed into deep learning models that have been trained to recognize patterns associated with bearing degradation. The models output a prediction of the remaining useful life, which is displayed on this dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
