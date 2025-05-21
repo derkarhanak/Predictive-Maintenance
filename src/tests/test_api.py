@@ -56,13 +56,12 @@ class TestFlaskAPI(unittest.TestCase):
             self.assertIn(field, data['data'], f"API should return {field} data")
     
     @patch('src.api.app.predict_rul')
-    @patch('src.api.app.load_production_model')
-    def test_predict_route(self, mock_load_model, mock_predict):
+    @patch('src.api.app.model', new_callable=MagicMock)  # Patch the model object in app.py
+    def test_predict_route(self, mock_app_model_object, mock_predict_rul_call):
         """Test that the predict route returns valid predictions"""
-        # Mock the model and prediction
-        mock_model = MagicMock()
-        mock_load_model.return_value = mock_model
-        mock_predict.return_value = np.array([[75.0]])
+        # Configure the mock for the predict_rul function
+        # The mock_app_model_object is already a MagicMock, so app.model is not None
+        mock_predict_rul_call.return_value = np.array([[75.0]])
         
         # Make request to predict endpoint
         response = self.app.post('/api/predict', 

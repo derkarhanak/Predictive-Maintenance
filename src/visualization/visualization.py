@@ -225,7 +225,7 @@ def create_health_index_plot(time_data, health_index):
     Returns:
         Base64 encoded string of the plot
     """
-    plt.figure(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=(12, 6)) # Use subplots for explicit fig and ax
     
     # Create a colormap for the health index
     cmap = plt.cm.RdYlGn
@@ -233,24 +233,30 @@ def create_health_index_plot(time_data, health_index):
     
     # Plot the health index
     for i in range(len(time_data)-1):
-        plt.plot(time_data[i:i+2], health_index[i:i+2], color=colors[i])
+        ax.plot(time_data[i:i+2], health_index[i:i+2], color=colors[i])
     
-    plt.xlabel('Time')
-    plt.ylabel('Health Index (%)')
-    plt.title('Bearing Health Index Over Time')
-    plt.ylim(0, 100)
+    ax.set_xlabel('Time')
+    ax.set_ylabel('Health Index (%)')
+    ax.set_title('Bearing Health Index Over Time')
+    ax.set_ylim(0, 100)
     
     # Add color bar
     sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(0, 100))
-    sm.set_array([])
-    cbar = plt.colorbar(sm)
+    sm.set_array([]) # Important for the mappable to be independent of data for colorbar
+    cbar = fig.colorbar(sm, ax=ax) # Associate colorbar with the figure and axes
     cbar.set_label('Health Status')
     
-    plt.grid(True, alpha=0.3)
+    ax.grid(True, alpha=0.3)
     
-    img_str = generate_base64_image(plt)
-    plt.close()
-    
+    img_str = generate_base64_image(fig) # Pass the figure object
+    # plt.close(fig) # generate_base64_image should handle closing if it takes a fig object
+                     # If generate_base64_image uses plt.gcf(), then plt.close() here is fine.
+                     # Let's assume generate_base64_image is fine for now or will be fixed if it also uses global state.
+                     # For now, the main fix is fig.colorbar.
+    # Upon review, generate_base64_image takes `fig` and calls `fig.savefig`.
+    # It does not call plt.close(). So we should close the fig object here.
+    plt.close(fig)
+
     return img_str
 
 def create_sample_visualizations():

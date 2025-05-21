@@ -97,9 +97,9 @@ class TestPredictiveMaintenanceSystem(unittest.TestCase):
         # Check approximate proportions
         self.assertAlmostEqual(len(X_test) / len(X), 1-CONFIG["train_test_split"], delta=0.1, 
                               msg="Test split should be approximately correct")
-        self.assertAlmostEqual(len(X_val) / len(X_train_val), CONFIG["validation_split"], delta=0.1, 
+        self.assertAlmostEqual(len(X_val) / (len(X) - len(X_test)), CONFIG["validation_split"], delta=0.1, 
                               msg="Validation split should be approximately correct")
-        where X_train_val = len(X) - len(X_test)
+        # where X_train_val = len(X) - len(X_test) # This line was causing a syntax error
     
     def test_flask_app(self):
         """Test that the Flask app can be imported"""

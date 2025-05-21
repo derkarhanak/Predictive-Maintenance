@@ -1,0 +1,195 @@
+2025-05-21 12:36:35,207 - matplotlib.font_manager - INFO - generated new fontManager
+2025-05-21 12:36:36,502 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:36:36,502 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:36:36,524 - src.api.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/src/api/app.py", line 49, in index
+    return render_template('index.html')
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-05-21 12:36:41,599 - src.config - ERROR - Error creating visualizations: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+2025-05-21 12:40:46,132 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:46,133 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:40:46,230 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:40:46,259 - src.config - ERROR - Processed data not found. Please run the data processing pipeline first.
+2025-05-21 12:40:46,259 - src.config - WARNING - Processed data not found, creating dummy data
+2025-05-21 12:40:46,262 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:46,262 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:40:46,299 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:40:46,314 - src.config - INFO - Data split: X_train=(64, 100, 3), X_val=(16, 100, 3), X_test=(20, 100, 3)
+2025-05-21 12:40:46,314 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:46,314 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:40:46,350 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:40:46,455 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:46,455 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:40:46,458 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:46,458 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:40:46,496 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:40:46,510 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:46,510 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:40:46,546 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:40:52,718 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:40:52,718 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:40:52,730 - src.api.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/src/api/app.py", line 49, in index
+    return render_template('index.html')
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-05-21 12:40:57,082 - src.config - ERROR - Error creating visualizations: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+2025-05-21 12:41:42,252 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:42,252 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:41:42,347 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:41:42,375 - src.config - INFO - Loading processed data from /app/src/../data/processed/X_data_latest.npy and /app/src/../data/processed/y_data_latest.npy
+2025-05-21 12:41:42,376 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:42,376 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:41:42,413 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:41:42,428 - src.config - INFO - Data split: X_train=(64, 100, 3), X_val=(16, 100, 3), X_test=(20, 100, 3)
+2025-05-21 12:41:42,428 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:42,428 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:41:42,465 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:41:42,570 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:42,570 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:41:42,573 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:42,573 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:41:42,611 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:41:42,624 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:42,625 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:41:42,659 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:41:48,894 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:41:48,894 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:41:48,906 - src.api.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/src/api/app.py", line 49, in index
+    return render_template('index.html')
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/swebot/.local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/swebot/.local/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-05-21 12:41:53,218 - src.config - ERROR - Error creating visualizations: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+2025-05-21 12:43:25,315 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:25,316 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:43:25,467 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:43:25,507 - src.config - INFO - Loading processed data from /app/src/../data/processed/X_data_latest.npy and /app/src/../data/processed/y_data_latest.npy
+2025-05-21 12:43:25,508 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:25,509 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:43:25,547 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:43:25,567 - src.config - INFO - Data split: X_train=(64, 100, 3), X_val=(16, 100, 3), X_test=(20, 100, 3)
+2025-05-21 12:43:25,567 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:25,567 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:43:25,604 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:43:25,777 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:25,777 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:43:25,780 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:25,781 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:43:25,823 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:43:25,841 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:25,842 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:43:25,877 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:43:31,973 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:43:31,973 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:43:36,797 - src.config - ERROR - Error creating visualizations: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+2025-05-21 12:44:44,388 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:44,388 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:44:44,482 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:44:44,510 - src.config - INFO - Loading processed data from /app/src/../data/processed/X_data_latest.npy and /app/src/../data/processed/y_data_latest.npy
+2025-05-21 12:44:44,511 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:44,511 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:44:44,547 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:44:44,562 - src.config - INFO - Data split: X_train=(64, 100, 3), X_val=(16, 100, 3), X_test=(20, 100, 3)
+2025-05-21 12:44:44,563 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:44,563 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:44:44,600 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:44:44,707 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:44,707 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:44:44,710 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:44,710 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:44:44,747 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:44:44,761 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:44,761 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:44:44,797 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:44:50,802 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:44:50,802 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:44:55,077 - src.config - ERROR - Error creating visualizations: Unable to determine Axes to steal space for Colorbar. Either provide the *cax* argument to use as the Axes for the Colorbar, provide the *ax* argument to steal space from it, or add *mappable* to an Axes.
+2025-05-21 12:46:17,703 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:17,703 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:46:17,795 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:46:17,821 - src.config - INFO - Loading processed data from /app/src/../data/processed/X_data_latest.npy and /app/src/../data/processed/y_data_latest.npy
+2025-05-21 12:46:17,822 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:17,822 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:46:17,858 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:46:17,874 - src.config - INFO - Data split: X_train=(64, 100, 3), X_val=(16, 100, 3), X_test=(20, 100, 3)
+2025-05-21 12:46:17,874 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:17,874 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:46:17,910 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:46:18,019 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:18,019 - src.config - INFO - Production model loaded successfully
+2025-05-21 12:46:18,022 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:18,022 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:46:18,057 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:46:18,070 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:18,070 - src.config - WARNING - Production model not found, creating test model
+2025-05-21 12:46:18,105 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-05-21 12:46:24,070 - src.config - ERROR - Production model not found at /app/src/../models/production_model.h5
+2025-05-21 12:46:24,070 - src.config - INFO - Production model loaded successfully
